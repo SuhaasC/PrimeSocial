@@ -24,6 +24,11 @@ const Footer: React.FC = () => {
               <p className="text-secondary-400 text-sm mb-4">
                 Prime Social is a brand of Aquilastrat
               </p>
+              <p className="text-secondary-400 text-sm mb-4">
+                <a href="mailto:contact@primesocial.agency" className="hover:text-accent-500 transition-colors duration-200">
+                  contact@primesocial.agency
+                </a>
+              </p>
               <div className="flex space-x-4">
                 <a href="https://x.com/primesocial" target="_blank" rel="noopener noreferrer" className="text-secondary-400 hover:text-accent-500 transition-colors duration-200">
                   <IconBrandX className="w-6 h-6" />

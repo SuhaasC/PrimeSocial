@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight, FaStar } from 'react-icons/fa';
 
 const ProofSection: React.FC = () => {
@@ -62,19 +62,51 @@ const ProofSection: React.FC = () => {
   // ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = Math.ceil(testimonials.length / 3);
+  const [isMobile, setIsMobile] = useState(false);
+  const totalSlides = testimonials.length;
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % totalSlides);
+    if (isMobile) {
+      // Mobile: move 1 testimonial at a time
+      setCurrentSlide((prev) => (prev + 1) % totalSlides);
+    } else {
+      // Desktop: move 3 testimonials at a time
+      setCurrentSlide((prev) => Math.min(prev + 3, totalSlides - 1));
+    }
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+    if (isMobile) {
+      // Mobile: move 1 testimonial at a time
+      setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+    } else {
+      // Desktop: move 3 testimonials at a time
+      setCurrentSlide((prev) => Math.max(prev - 3, 0));
+    }
   };
 
+  // Detect screen size changes
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
   const getVisibleTestimonials = () => {
-    const startIndex = currentSlide * 3;
-    return testimonials.slice(startIndex, startIndex + 3);
+    if (isMobile) {
+      // Mobile: show 1 testimonial at a time
+      return [testimonials[currentSlide]];
+    } else {
+      // Desktop: show 3 testimonials in a row
+      const startIndex = currentSlide;
+      const endIndex = Math.min(startIndex + 3, testimonials.length);
+      return testimonials.slice(startIndex, endIndex);
+    }
   };
 
   return (
@@ -113,9 +145,9 @@ const ProofSection: React.FC = () => {
             </button>
 
             {/* Testimonials Grid */}
-            <div className="grid md:grid-cols-3 gap-8 px-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-8">
               {getVisibleTestimonials().map((testimonial, index) => (
-                <div key={index} className="bg-secondary-50 rounded-xl p-8 hover:shadow-lg transition-all duration-300">
+                <div key={index} className="bg-secondary-50 rounded-xl p-8 hover:shadow-lg transition-all duration-500 transform transition-transform duration-300">
                   <div className="flex items-center mb-4">
                     {[...Array(5)].map((_, i) => (
                       <FaStar key={i} className="w-5 h-5 text-accent-500" />
@@ -136,15 +168,33 @@ const ProofSection: React.FC = () => {
 
             {/* Carousel Indicators */}
             <div className="flex justify-center mt-8 space-x-2">
-              {Array.from({ length: totalSlides }, (_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                    index === currentSlide ? 'bg-primary-800' : 'bg-secondary-300'
-                  }`}
-                />
-              ))}
+              {isMobile ? (
+                // Mobile: show individual testimonial indicators
+                Array.from({ length: totalSlides }, (_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                      index === currentSlide ? 'bg-primary-800' : 'bg-secondary-300'
+                    }`}
+                  />
+                ))
+              ) : (
+                // Desktop: show page indicators (groups of 3)
+                Array.from({ length: Math.ceil(totalSlides / 3) }, (_, pageIndex) => {
+                  const startIndex = pageIndex * 3;
+                  const isCurrentPage = currentSlide >= startIndex && currentSlide < startIndex + 3;
+                  return (
+                    <button
+                      key={pageIndex}
+                      onClick={() => setCurrentSlide(startIndex)}
+                      className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                        isCurrentPage ? 'bg-primary-800' : 'bg-secondary-300'
+                      }`}
+                    />
+                  );
+                })
+              )}
             </div>
           </div>
         </div>

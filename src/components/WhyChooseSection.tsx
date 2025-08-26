@@ -7,7 +7,7 @@ const WhyChooseSection: React.FC = () => {
     {
       icon: <FaBuilding className="w-8 h-8" />,
       title: "Clinic Specialists",
-      description: "We only work with medical aesthetics and dermatology clinics. We understand your industry, regulations, and patient journey better than general agencies."
+      description: "We only work with medical clinics. We understand your industry, regulations, and patient journey better than general agencies."
     },
     {
       icon: <FaHeart className="w-8 h-8" />,

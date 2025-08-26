@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { trackButtonClick, trackExternalLink } from '../utils/analytics';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,27 +34,15 @@ const Header: React.FC = () => {
               About
             </a>
             
-            {/* Legal Dropdown */}
-            <div className="relative group">
-              <button className="flex items-center text-secondary-600 hover:text-accent-500 transition-colors duration-200">
-                Legal
-                <FaChevronDown className="ml-1 w-3 h-3" />
-              </button>
-              <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <a href="/privacy" className="block px-4 py-2 text-secondary-600 hover:text-accent-500 hover:bg-secondary-50 transition-colors duration-200">
-                  Privacy Policy
-                </a>
-                <a href="/terms" className="block px-4 py-2 text-secondary-600 hover:text-accent-500 hover:bg-secondary-50 transition-colors duration-200">
-                  Terms of Service
-                </a>
-              </div>
-            </div>
-            
             <a 
               href="https://calendly.com/suhaas-primesocial/30min" 
               target="_blank" 
               rel="noopener noreferrer"
               className="btn-primary"
+              onClick={() => {
+                trackButtonClick('Book Free Audit', 'Header');
+                trackExternalLink('https://calendly.com/suhaas-primesocial/30min', 'Calendly - Header CTA');
+              }}
             >
               Book Free Audit
             </a>
@@ -98,30 +87,16 @@ const Header: React.FC = () => {
                 About
               </a>
               
-              {/* Legal Links */}
-              <div className="border-t border-secondary-200 pt-4">
-                <a 
-                  href="/privacy" 
-                  className="block text-secondary-600 hover:text-accent-500 transition-colors duration-200"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Privacy Policy
-                </a>
-                <a 
-                  href="/terms" 
-                  className="block text-secondary-600 hover:text-accent-500 transition-colors duration-200 mt-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Terms of Service
-                </a>
-              </div>
-              
               <a 
                 href="https://calendly.com/suhaas-primesocial/30min" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn-primary text-center"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  trackButtonClick('Book Free Audit', 'Mobile Menu');
+                  trackExternalLink('https://calendly.com/suhaas-primesocial/30min', 'Calendly - Mobile Menu CTA');
+                }}
               >
                 Book Free Audit
               </a>

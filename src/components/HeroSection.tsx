@@ -52,7 +52,7 @@ const HeroSection: React.FC = () => {
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-secondary-600 mb-10 leading-relaxed">
-            We help clinics book <span className="font-semibold text-secondary-800">15–30 new patient appointments</span> every month
+            We help clinics book <span className="font-semibold text-secondary-800">15-30 new patient appointments</span> every month
             without you lifting a finger on marketing.
           </p>
 

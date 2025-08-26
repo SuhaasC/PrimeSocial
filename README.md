@@ -1,167 +1,225 @@
-# Prime Social Landing Page
+# Prime Social Website
 
-A modern, elegant React landing page for Prime Social, a digital marketing agency specializing in premium medical aesthetics clinics.
+Medical Aesthetics Marketing Website for Prime Social, a brand of Aquilastrat.
 
-## 🎯 Project Overview
+## Features
 
-This landing page is designed for premium med spas, aesthetic clinics, and cosmetic dermatology practices in the US & Canada. The target audience includes clinics with $1M–$5M revenue, 5–25 staff, and growth-focused objectives.
+- Responsive design
+- SEO optimized
+- Privacy Policy & Terms of Service
+- Contact forms
+- Service showcases
 
-## ✨ Features
+## Tech Stack
 
-- **Responsive Design**: Mobile-first approach with TailwindCSS
-- **Modern UI/UX**: Clean, high-end design with understated luxury
-- **TypeScript**: Full type safety and modern development experience
-- **Performance Optimized**: Fast loading and smooth interactions
-- **SEO Ready**: Semantic HTML structure and meta tags
+- React 18
+- TypeScript
+- Tailwind CSS
+- Vite
 
-## 🏗️ Sections Included
+## Development
 
-1. **Hero Section** - Compelling headline and CTA
-2. **Pain Points** - Common clinic marketing struggles
-3. **Services** - The Prime Social Growth System
-4. **Proof & Results** - Testimonials and case studies
-5. **Why Choose Us** - Competitive advantages
-6. **About Us** - Founder story and company values
-7. **Final CTA** - Urgency-driven conversion section
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js (v16 or higher)
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd PrimeSocial
-```
-
-2. Install dependencies:
 ```bash
 npm install
-```
-
-3. Start the development server:
-```bash
 npm run dev
 ```
 
-4. Open your browser and navigate to `http://localhost:5173`
-
-### Build for Production
+## Build
 
 ```bash
 npm run build
 ```
 
-The built files will be in the `dist` directory.
+## Deploy
 
-## 🛠️ Tech Stack
+Auto-deployed via Hostinger GitHub integration.
 
-- **React 18** - Modern React with hooks
-- **TypeScript** - Type-safe development
-- **TailwindCSS** - Utility-first CSS framework
-- **Vite** - Fast build tool and dev server
-- **React Router** - Client-side routing (if needed)
+## **🚀 Complete GitHub Auto-Deploy Setup**
 
-## 🎨 Design System
+### **Step 1: Initialize Git Repository**
 
-### Colors
-- **Primary**: Blue tones (#0ea5e9, #0284c7, etc.)
-- **Secondary**: Gray tones (#64748b, #334155, etc.)
-- **Accent**: Green for success indicators
+```bash
+# Navigate to your project folder (if not already there)
+cd /Users/suhaasc/Documents/Work/PrimeSocial
 
-### Typography
-- **Font**: Inter (Google Fonts)
-- **Headings**: Bold, large scale
-- **Body**: Medium weight, readable line heights
+# Initialize git repository
+git init
 
-### Components
-- Custom button styles with hover effects
-- Responsive grid layouts
-- Consistent spacing and padding
-- Smooth transitions and animations
+# Add all files
+git add .
 
-## 📱 Responsive Breakpoints
-
-- **Mobile**: < 768px
-- **Tablet**: 768px - 1024px
-- **Desktop**: > 1024px
-
-## 🔗 External Links
-
-- **Calendly**: https://calendly.com/suhaas-primesocial/30min
-- **Primary CTA**: Book Your Free Digital Audit
-
-## 📁 Project Structure
-
-```
-src/
-├── components/          # React components
-│   ├── Header.tsx      # Navigation header
-│   ├── HeroSection.tsx # Main hero section
-│   ├── PainPointsSection.tsx # Pain points
-│   ├── ServicesSection.tsx # Services showcase
-│   ├── ProofSection.tsx # Testimonials & results
-│   ├── WhyChooseSection.tsx # Competitive advantages
-│   ├── AboutSection.tsx # Company story
-│   ├── FinalCTASection.tsx # Final call-to-action
-│   └── Footer.tsx      # Site footer
-├── App.tsx             # Main app component
-├── main.tsx            # Entry point
-└── index.css           # Global styles & TailwindCSS
+# Make your first commit
+git commit -m "Initial commit - Prime Social website"
 ```
 
-## 🎯 Key Features
+### **Step 2: Create GitHub Repository**
 
-- **Mobile-First Design**: Responsive across all devices
-- **Performance Optimized**: Fast loading times
-- **Accessibility**: Semantic HTML and ARIA labels
-- **SEO Friendly**: Proper heading structure and meta tags
-- **Conversion Focused**: Multiple CTAs and social proof
+1. **Go to GitHub.com** and sign in
+2. **Click "New repository"** (green button)
+3. **Repository name**: `primesocial-website` (or your preferred name)
+4. **Description**: "Prime Social - Medical Aesthetics Marketing Website"
+5. **Make it Public** (recommended for auto-deploy)
+6. **Don't initialize** with README, .gitignore, or license
+7. **Click "Create repository"**
 
-## 🚀 Deployment
+### **Step 3: Connect Local to GitHub**
 
-The project can be deployed to any static hosting service:
+```bash
+# Add the remote origin (replace YOUR_USERNAME with your GitHub username)
+git remote add origin https://github.com/YOUR_USERNAME/primesocial-website.git
 
-- **Vercel**: `vercel --prod`
-- **Netlify**: Drag and drop the `dist` folder
-- **GitHub Pages**: Use the `gh-pages` package
-- **AWS S3**: Upload the `dist` folder contents
+# Set main as default branch
+git branch -M main
 
-## 📝 Customization
+# Push to GitHub
+git push -u origin main
+```
 
-### Colors
-Update the color scheme in `tailwind.config.js` under the `extend.colors` section.
+### **Step 4: Configure Hostinger GitHub Integration**
 
-### Content
-Modify the content in each component file to match your specific needs.
+1. **Login to Hostinger Control Panel**
+2. **Go to Domains → Your Domain → GitHub**
+3. **Click "Connect GitHub"**
+4. **Authorize Hostinger** to access your GitHub account
+5. **Select your repository**: `primesocial-website`
+6. **Configure build settings:**
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+   - **Node.js Version**: Select the latest LTS (18.x or 20.x)
+7. **Click "Deploy"**
 
-### Images
-Replace placeholder content with actual clinic images and logos.
+### **Step 5: Test Auto-Deploy**
 
-## 🤝 Contributing
+```bash
+# Make a small change to test
+# Edit any file (like adding a comment)
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+# Commit and push
+git add .
+git commit -m "Test auto-deploy"
+git push origin main
+```
 
-## 📄 License
+**Watch Hostinger** - it should automatically start building and deploying!
 
-This project is proprietary to Prime Social. All rights reserved.
+## **📁 File Structure Check**
 
-## 📞 Support
+Make sure your project has these essential files:
 
-For questions or support, contact:
-- **Email**: [Your Email]
-- **Website**: [Your Website]
-- **Calendly**: https://calendly.com/suhaas-primesocial/30min
+```
+PrimeSocial/
+├── package.json          ✅ (should exist)
+├── vite.config.js        ✅ (should exist)
+├── .gitignore           ❌ (need to create)
+├── README.md            ❌ (optional but recommended)
+└── src/                 ✅ (your components)
+```
 
----
+## **🔧 Create .gitignore File**
 
-Built with ❤️ for Prime Social
+```bash
+# Create .gitignore
+cat > .gitignore << 'EOF'
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+EOF
+```
+
+## **📝 Create README.md**
+
+```bash
+# Create README
+cat > README.md << 'EOF'
+# Prime Social Website
+
+Medical Aesthetics Marketing Website for Prime Social, a brand of Aquilastrat.
+
+## Features
+
+- Responsive design
+- SEO optimized
+- Privacy Policy & Terms of Service
+- Contact forms
+- Service showcases
+
+## Tech Stack
+
+- React 18
+- TypeScript
+- Tailwind CSS
+- Vite
+
+## Development
+
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+## Deploy
+
+Auto-deployed via Hostinger GitHub integration.
+EOF
+```
+
+## **🔄 Complete Setup Commands**
+
+```bash
+<code_block_to_apply_changes_from>
+```
+
+## **✅ What Happens After Setup**
+
+1. **Every time you push code** → Hostinger automatically detects changes
+2. **Builds your app** → Runs `npm run build`
+3. **Deploys to your domain** → Updates your live website
+4. **No manual uploads needed** → Fully automated!
+
+## **🚨 Troubleshooting Tips**
+
+- **Build fails?** Check Hostinger logs for npm errors
+- **404 errors?** Make sure `.htaccess` is configured for React Router
+- **Assets not loading?** Check file paths in the build output
+
+## **🎯 Next Steps**
+
+1. **Create the GitHub repo** (Step 2)
+2. **Run the setup commands** (Step 5)
+3. **Configure Hostinger** (Step 4)
+4. **Test with a small change**
+
+Would you like me to help you with any specific step, or do you have questions about the GitHub repository setup?

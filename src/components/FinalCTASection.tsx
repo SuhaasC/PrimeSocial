@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaExclamationTriangle, FaCheck } from 'react-icons/fa';
+import { trackButtonClick, trackExternalLink } from '../utils/analytics';
 
 const FinalCTASection: React.FC = () => {
   // Calculate spots remaining based on current date
@@ -44,16 +45,32 @@ const FinalCTASection: React.FC = () => {
             </p>
           </div>
 
-          {/* Single CTA Button */}
+          {/* CTA Buttons */}
           <div className="mb-8">
-            <a 
-              href="https://calendly.com/suhaas-primesocial/30min" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="bg-white text-secondary-600 hover:bg-gray-100 font-bold py-4 px-10 rounded-lg text-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
-            >
-              Book Your Free Digital Audit
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a 
+                href="https://calendly.com/suhaas-primesocial/30min" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-white text-secondary-600 hover:bg-gray-100 font-bold py-4 px-10 rounded-lg text-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto text-center"
+                onClick={() => {
+                  trackButtonClick('Book Free Digital Audit', 'Final CTA Section');
+                  trackExternalLink('https://calendly.com/suhaas-primesocial/30min', 'Calendly - Book Free Audit');
+                }}
+              >
+                Book Your Free Digital Audit
+              </a>
+              <a 
+                href="mailto:contact@primesocial.agency" 
+                className="border-2 border-white text-white hover:bg-white hover:text-secondary-600 font-bold py-4 px-10 rounded-lg text-lg transition-all duration-200 transform hover:scale-105 w-full sm:w-auto text-center"
+                onClick={() => {
+                  trackButtonClick('Email Us', 'Final CTA Section');
+                  trackExternalLink('mailto:contact@primesocial.agency', 'Email Contact');
+                }}
+              >
+                Email Us
+              </a>
+            </div>
           </div>
 
           {/* Trust Indicators */}

@@ -17,7 +17,7 @@ const ServicesSection: React.FC = () => {
     },
     {
       title: "Growth Engine",
-      tagline: "Your clinic becomes the #1 trusted choice in your city.",
+      tagline: "Your clinic becomes the trusted choice in your city.",
       description: "Build an unbeatable reputation through strategic content marketing, review management, and local SEO that positions you as the authority in your market.",
       features: [
         "Google Business Profile optimization",
@@ -91,11 +91,11 @@ const ServicesSection: React.FC = () => {
 
                 {/* Image */}
                 <div className="flex-1 mt-8 md:mt-0">
-                  <div className="rounded-xl overflow-hidden h-64">
+                  <div className="rounded-xl overflow-hidden h-52 md:h-64">
                     <img 
                       src={service.image} 
                       alt={service.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain object-center"
                     />
                   </div>
                 </div>
@@ -113,14 +113,22 @@ const ServicesSection: React.FC = () => {
               Your website attracts visitors, your reputation builds trust, and your ads accelerate growth. 
               It's a complete system designed for clinic success.
             </p>
-            <a 
-              href="https://calendly.com/suhaas-primesocial/30min" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-              See How It Works for Your Clinic
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a 
+                href="https://calendly.com/suhaas-primesocial/30min" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn-primary w-full sm:w-auto text-center"
+              >
+                See How It Works for Your Clinic
+              </a>
+              <a 
+                href="mailto:contact@primesocial.agency" 
+                className="btn-secondary w-full sm:w-auto text-center"
+              >
+                Email Us
+              </a>
+            </div>
           </div>
         </div>
       </div>

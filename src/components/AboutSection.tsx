@@ -34,7 +34,7 @@ const AboutSection: React.FC = () => {
                   and the unique journey from discovery to conversion."
                 </p>
                 <p>
-                  "That's why we built Prime Social—to be the agency that truly 
+                  "That's why we built Prime Social, to be the agency that truly 
                   understands your business and delivers results that matter."
                 </p>
               </div>
@@ -54,14 +54,30 @@ const AboutSection: React.FC = () => {
 
             {/* Visual Element */}
             <div className="text-center">
-              <div className="bg-gradient-to-br from-accent-100 to-accent-200 rounded-2xl p-12 h-96 flex items-center justify-center">
+              <div className="bg-gradient-to-br from-accent-100 to-accent-200 rounded-2xl p-8 h-96 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="w-32 h-32 bg-white rounded-full mx-auto mb-6 flex items-center justify-center">
-                    <FaUser className="w-16 h-16 text-accent-500" />
+                  <div className="w-56 h-56 bg-white rounded-full mx-auto mb-8 flex items-center justify-center overflow-hidden shadow-lg">
+                    <img 
+                      src="/headshot.png" 
+                      alt="Suhaas - Founder of Prime Social" 
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        // Fallback to icon if image fails to load
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const parent = target.parentElement;
+                        if (parent) {
+                          const icon = document.createElement('div');
+                          icon.innerHTML = '<svg class="w-24 h-24 text-accent-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>';
+                          parent.appendChild(icon);
+                        }
+                      }}
+                    />
                   </div>
-                  <h4 className="text-xl font-semibold text-secondary-700 mb-2">Suhaas</h4>
-                  <p className="text-secondary-600">Founder & CEO</p>
-                  <p className="text-sm text-secondary-600 mt-2">Prime Social</p>
+                  <div className="mt-6">
+                    <h4 className="text-2xl font-bold text-secondary-700 mb-2">Suhaas C</h4>
+                    <p className="text-lg text-secondary-600 font-medium mb-2">Founder & CEO</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -90,7 +106,7 @@ const AboutSection: React.FC = () => {
                 </div>
                 <h4 className="text-xl font-semibold text-primary-800 mb-3">Partnership-First</h4>
                 <p className="text-secondary-600">
-                  We're not just your agency—we're your growth partner. Your success 
+                  We're not just your agency, we're your growth partner. Your success 
                   is our success, and we're invested in your long-term growth.
                 </p>
               </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCheckCircle, FaHeart, FaShieldAlt, FaUser } from 'react-icons/fa';
+import { FaCheckCircle, FaHeart, FaShieldAlt } from 'react-icons/fa';
 
 const AboutSection: React.FC = () => {
   return (

@@ -76,7 +76,7 @@ const FinalCTASection: React.FC = () => {
           {/* Trust Indicators */}
           <div className="border-t border-white border-opacity-20 pt-8">
             <p className="text-white text-opacity-80 mb-4">
-              What you get in your free 30-minute consultation:
+              What you get in your free 15-minute consultation:
             </p>
             <div className="grid md:grid-cols-3 gap-6 text-sm">
               <div className="flex items-center gap-2">

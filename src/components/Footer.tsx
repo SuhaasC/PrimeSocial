@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
           {/* Bottom Bar */}
           <div className="border-t border-secondary-700 mt-8 pt-8 text-center">
             <p className="text-secondary-400 text-sm">
-              © 2024 Prime Social. All rights reserved. | 
+              © 2025 Prime Social by Aquilastrat. All rights reserved. | 
               <a href="/privacy" className="hover:text-accent-500 transition-colors duration-200 ml-2">Privacy Policy</a> | 
               <a href="/terms" className="hover:text-accent-500 transition-colors duration-200 ml-2">Terms of Service</a>
             </p>

@@ -1,5 +1,5 @@
 // Strapi API configuration
-const STRAPI_URL = process.env.NODE_ENV === 'production' 
+const STRAPI_URL = import.meta.env.MODE === 'production' 
   ? 'https://your-domain.com/cms' // Change this to your production Strapi URL
   : 'http://localhost:1337';
 

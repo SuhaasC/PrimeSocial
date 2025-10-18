@@ -11,7 +11,7 @@ const TermsOfService: React.FC = () => {
           
           <div className="prose prose-lg max-w-none">
             <p className="text-secondary-600 mb-6">
-              <strong>Last updated:</strong> {new Date().toLocaleDateString('en-US', { 
+              <strong>Last updated:</strong> {new Date().toLocaleDateString('en-GB', { 
                 year: 'numeric', 
                 month: 'long', 
                 day: 'numeric' 
@@ -43,7 +43,7 @@ const TermsOfService: React.FC = () => {
             <div className="mb-8">
               <h2 className="text-2xl font-semibold text-primary-700 mb-4">3. Services Description</h2>
               <p className="text-secondary-700 mb-4">
-                Prime Social provides marketing and consulting services to health and wellness clinics in the US & Canada, including:
+                Prime Social provides marketing and consulting services to health and wellness clinics in the UK & EU, including:
               </p>
               <ul className="list-disc pl-6 text-secondary-700 mb-4 space-y-2">
                 <li>Conversion-focused website design and development</li>

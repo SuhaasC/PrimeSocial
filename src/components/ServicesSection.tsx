@@ -8,7 +8,7 @@ const ServicesSection: React.FC = () => {
       description: "Your website is often the first impression potential patients have of your clinic. We build sites that don't just look good but also convert visitors into booked appointments.",
       features: [
         "Mobile-first, fast-loading design",
-        "HIPAA-compliant forms and security",
+        "GDPR-compliant forms and security",
         "Local SEO optimization ready",
         "Premium, trustworthy aesthetic",
         "Conversion-focused user experience"
@@ -17,7 +17,7 @@ const ServicesSection: React.FC = () => {
     },
     {
       title: "Growth Engine",
-      tagline: "Your clinic becomes the trusted choice in your city.",
+      tagline: "Your clinic becomes the trusted choice in your area.",
       description: "Build an unbeatable reputation through strategic content marketing, review management, and local SEO that positions you as the authority in your market.",
       features: [
         "Google Business Profile optimization",

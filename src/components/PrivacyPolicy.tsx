@@ -11,7 +11,7 @@ const PrivacyPolicy: React.FC = () => {
           
           <div className="prose prose-lg max-w-none">
             <p className="text-secondary-600 mb-6">
-              <strong>Last updated:</strong> {new Date().toLocaleDateString('en-US', { 
+              <strong>Last updated:</strong> {new Date().toLocaleDateString('en-GB', { 
                 year: 'numeric', 
                 month: 'long', 
                 day: 'numeric' 

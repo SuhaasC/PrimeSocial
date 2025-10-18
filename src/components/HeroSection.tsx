@@ -71,17 +71,21 @@ const HeroSection: React.FC = () => {
           {/* Trust Indicators */}
           <div className="text-center">
             <p className="text-base text-secondary-500 mb-2">
-              No commitment • 30-minute call • Actionable insight
+              No commitment • 15-minute call • Actionable insight
             </p>
           </div>
 
           {/* Trust Indicators */}
           <div className="mt-8 pt-8 border-t border-accent-500">
-            <p className="text-secondary-500 mb-4">Trusted by premium clinics across US & Canada</p>
+            <p className="text-secondary-500 mb-4">Trusted by premium clinics across UK & EU</p>
             <div className="flex flex-wrap justify-center items-center gap-8 text-secondary-600">
               <div className="flex items-center gap-2">
                 <FaCheck className="w-5 h-5 text-accent-500" />
-                <span>HIPAA Compliant</span>
+                <span>UK/EU Compliant</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <FaCheck className="w-5 h-5 text-accent-500" />
+                <span>GDPR Compliant</span>
               </div>
               <div className="flex items-center gap-2">
                 <FaCheck className="w-5 h-5 text-accent-500" />

@@ -21,7 +21,7 @@ const PrivacyPolicy: React.FC = () => {
             <div className="mb-8">
               <h2 className="text-2xl font-semibold text-primary-700 mb-4">1. Introduction</h2>
               <p className="text-secondary-700 mb-4">
-                Prime Social ("we," "our," or "us") is a brand of Aquilastrat, committed to protecting your privacy. 
+                Prime Social (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is a brand of Aquilastrat, committed to protecting your privacy. 
                 This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use 
                 our services or visit our website.
               </p>
@@ -36,7 +36,7 @@ const PrivacyPolicy: React.FC = () => {
                 <p className="text-secondary-700 mb-2"><strong>Company:</strong> Aquilastrat</p>
                 <p className="text-secondary-700 mb-2"><strong>Brand:</strong> Prime Social</p>
                 <p className="text-secondary-700 mb-2"><strong>Address:</strong> Sai Chethana, 20th Main BTM 4th Stage, Bangalore IN - 560076</p>
-                <p className="text-secondary-700 mb-2"><strong>Email:</strong> contact@primesocial.agnecy</p>
+                <p className="text-secondary-700 mb-2"><strong>Email:</strong> contact@primesocial.agency</p>
                 <p className="text-secondary-700"><strong>Phone:</strong> +919945540655</p>
               </div>
             </div>
@@ -118,7 +118,7 @@ const PrivacyPolicy: React.FC = () => {
                 <li><strong>Restriction:</strong> Request restriction of processing</li>
               </ul>
               <p className="text-secondary-700">
-                To exercise these rights, please contact us at <a href="mailto:contact@primesocial.agnecy" className="text-accent-500 hover:text-accent-600">contact@primesocial.agnecy</a>
+                To exercise these rights, please contact us at <a href="mailto:contact@primesocial.agency" className="text-accent-500 hover:text-accent-600">contact@primesocial.agency</a>
               </p>
             </div>
 
@@ -131,7 +131,7 @@ const PrivacyPolicy: React.FC = () => {
             </div>
 
             <div className="mb-8">
-              <h2 className="text-2xl font-semibold text-primary-700 mb-4">11. Children's Privacy</h2>
+              <h2 className="text-2xl font-semibold text-primary-700 mb-4">11. Children&apos;s Privacy</h2>
               <p className="text-secondary-700 mb-4">
                 Our services are not intended for individuals under the age of 18. We do not knowingly collect personal 
                 information from children under 18.
@@ -142,7 +142,7 @@ const PrivacyPolicy: React.FC = () => {
               <h2 className="text-2xl font-semibold text-primary-700 mb-4">12. Changes to This Privacy Policy</h2>
               <p className="text-secondary-700 mb-4">
                 We may update this Privacy Policy from time to time. We will notify you of any changes by posting the 
-                new Privacy Policy on this page and updating the "Last updated" date.
+                new Privacy Policy on this page and updating the &quot;Last updated&quot; date.
               </p>
             </div>
 
@@ -150,7 +150,7 @@ const PrivacyPolicy: React.FC = () => {
               <h2 className="text-2xl font-semibold text-primary-700 mb-4">13. Contact Us</h2>
               <p className="text-secondary-700 mb-4">If you have any questions about this Privacy Policy, please contact us:</p>
               <div className="bg-gray-50 p-4 rounded-lg">
-                <p className="text-secondary-700 mb-2"><strong>Email:</strong> <a href="mailto:contact@primesocial.agnecy" className="text-accent-500 hover:text-accent-600">contact@primesocial.agnecy</a></p>
+                <p className="text-secondary-700 mb-2"><strong>Email:</strong> <a href="mailto:contact@primesocial.agency" className="text-accent-500 hover:text-accent-600">contact@primesocial.agency</a></p>
                 <p className="text-secondary-700 mb-2"><strong>Phone:</strong> +919945540655</p>
                 <p className="text-secondary-700"><strong>Address:</strong> Sai Chethana, 20th Main BTM 4th Stage, Bangalore IN - 560076</p>
               </div>

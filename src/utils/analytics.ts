@@ -1,35 +1,31 @@
-import ReactGA from 'react-ga4';
+type GtagFn = (command: string, eventName: string, params?: Record<string, unknown>) => void;
 
-// Initialize Google Analytics
-export const initGA = (measurementId?: string) => {
-  // You'll need to replace this with your actual Google Analytics Measurement ID
-  // It looks like: G-XXXXXXXXXX
-  const GA_MEASUREMENT_ID = measurementId || 'G-Y3EFWF432J';
-  
-  if (GA_MEASUREMENT_ID && GA_MEASUREMENT_ID !== 'G-XXXXXXXXXX') {
-    ReactGA.initialize(GA_MEASUREMENT_ID);
-    console.log('Google Analytics initialized with ID:', GA_MEASUREMENT_ID);
-  } else {
-    console.warn('Google Analytics not initialized - Please set your Measurement ID');
+declare global {
+  interface Window {
+    gtag?: GtagFn;
   }
+}
+
+const sendGtagEvent = (eventName: string, params: Record<string, unknown>) => {
+  if (typeof window === 'undefined' || typeof window.gtag !== 'function') {
+    return;
+  }
+
+  window.gtag('event', eventName, params);
 };
 
-// Track page views
 export const trackPageView = (path: string, title?: string) => {
-  ReactGA.send({ 
-    hitType: 'pageview', 
-    page: path,
-    title: title || document.title
+  sendGtagEvent('page_view', {
+    page_path: path,
+    page_title: title || (typeof document !== 'undefined' ? document.title : undefined),
   });
 };
 
-// Track custom events
 export const trackEvent = (action: string, category: string, label?: string, value?: number) => {
-  ReactGA.event({
-    action,
-    category,
-    label,
-    value
+  sendGtagEvent(action, {
+    event_category: category,
+    event_label: label,
+    value,
   });
 };
 
@@ -43,12 +39,40 @@ export const trackFormSubmit = (formName: string) => {
   trackEvent('submit', 'form', formName);
 };
 
-// Track external link clicks
-export const trackExternalLink = (url: string, linkText?: string) => {
-  trackEvent('click', 'external_link', linkText || url);
+export const trackLeadGenerated = (label = 'Booking Review Application') => {
+  sendGtagEvent('generate_lead', {
+    currency: 'GBP',
+    value: 1,
+    event_category: 'conversion',
+    event_label: label,
+  });
 };
 
 // Track scroll depth
 export const trackScrollDepth = (percentage: number) => {
   trackEvent('scroll', 'engagement', `${percentage}%`, percentage);
+};
+
+export const trackSectionView = (sectionId: string) => {
+  trackEvent('section_view', 'engagement', sectionId);
+};
+
+export const trackFormStart = (formName: string) => {
+  trackEvent('form_start', 'form', formName);
+};
+
+export const trackFormStepView = (formName: string, step: number) => {
+  trackEvent('form_step_view', 'form', `${formName} - Step ${step}`, step);
+};
+
+export const trackFormSubmitAttempt = (formName: string) => {
+  trackEvent('form_submit_attempt', 'form', formName);
+};
+
+export const trackFormSubmitSuccess = (formName: string) => {
+  trackEvent('form_submit_success', 'form', formName);
+};
+
+export const trackThankYouView = (pageName: string) => {
+  trackEvent('thank_you_view', 'conversion', pageName);
 };

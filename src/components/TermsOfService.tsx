@@ -21,7 +21,7 @@ const TermsOfService: React.FC = () => {
             <div className="mb-8">
               <h2 className="text-2xl font-semibold text-primary-700 mb-4">1. Agreement to Terms</h2>
               <p className="text-secondary-700 mb-4">
-                These Terms of Service ("Terms") govern your use of Prime Social's services. Prime Social is a brand of 
+                These Terms of Service (&quot;Terms&quot;) govern your use of Prime Social&apos;s services. Prime Social is a brand of 
                 Aquilastrat. By accessing or using our services, you agree to be bound by these Terms.
               </p>
               <p className="text-secondary-700">
@@ -35,7 +35,7 @@ const TermsOfService: React.FC = () => {
                 <p className="text-secondary-700 mb-2"><strong>Company:</strong> Aquilastrat</p>
                 <p className="text-secondary-700 mb-2"><strong>Brand:</strong> Prime Social</p>
                 <p className="text-secondary-700 mb-2"><strong>Address:</strong> Sai Chethana, 20th Main BTM 4th Stage, Bangalore IN - 560076</p>
-                <p className="text-secondary-700 mb-2"><strong>Email:</strong> contact@primesocial.agnecy</p>
+                <p className="text-secondary-700 mb-2"><strong>Email:</strong> contact@primesocial.agency</p>
                 <p className="text-secondary-700"><strong>Phone:</strong> +919945540655</p>
               </div>
             </div>
@@ -123,7 +123,7 @@ const TermsOfService: React.FC = () => {
             <div className="mb-8">
               <h2 className="text-2xl font-semibold text-primary-700 mb-4">9. Limitation of Liability</h2>
               <p className="text-secondary-700 mb-4">
-                Prime Social's liability is limited to the amount paid for services. We are not liable for:
+                Prime Social&apos;s liability is limited to the amount paid for services. We are not liable for:
               </p>
               <ul className="list-disc pl-6 text-secondary-700 mb-4 space-y-2">
                 <li>Indirect, incidental, or consequential damages</li>
@@ -188,7 +188,7 @@ const TermsOfService: React.FC = () => {
               <h2 className="text-2xl font-semibold text-primary-700 mb-4">15. Contact Information</h2>
               <p className="text-secondary-700 mb-4">For questions about these Terms, please contact us:</p>
               <div className="bg-gray-50 p-4 rounded-lg">
-                <p className="text-secondary-700 mb-2"><strong>Email:</strong> <a href="mailto:contact@primesocial.agnecy" className="text-accent-500 hover:text-accent-600">contact@primesocial.agnecy</a></p>
+                <p className="text-secondary-700 mb-2"><strong>Email:</strong> <a href="mailto:contact@primesocial.agency" className="text-accent-500 hover:text-accent-600">contact@primesocial.agency</a></p>
                 <p className="text-secondary-700 mb-2"><strong>Phone:</strong> +919945540655</p>
                 <p className="text-secondary-700"><strong>Address:</strong> Sai Chethana, 20th Main BTM 4th Stage, Bangalore IN - 560076</p>
               </div>

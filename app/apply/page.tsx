@@ -7,7 +7,7 @@ const applyPreviewImage = '/linkedin-profile.png';
 export const metadata: Metadata = {
   title: 'Apply for a Booking Review | Prime Social',
   description:
-    'Apply for Prime Social\'s booking review for UK clinics. We assess your enquiry-to-appointment flow and recommend a 15-day or 30-day optimisation scope.',
+    'Apply for Prime Social\'s booking review for UK clinics. We assess your enquiry-to-appointment flow and recommend a 15 Day Booking Leak Fix or 30 Day Booking System Reset.',
   alternates: {
     canonical: '/apply',
   },

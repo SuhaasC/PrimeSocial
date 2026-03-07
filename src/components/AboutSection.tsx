@@ -13,16 +13,16 @@ const AboutSection: React.FC = () => {
     <section id="thirty-day" className="section-padding relative overflow-hidden">
       <div className="container-custom relative">
         <div className="mx-auto mb-10 max-w-3xl text-center">
-          <span className="eyebrow mb-3">30-Day Service</span>
+          <span className="eyebrow mb-3">30 Day Booking System Reset</span>
           <h2 className="title-display mb-4 text-3xl font-bold md:text-5xl">When 30 Days Is the Better Fit</h2>
           <p className="text-lg leading-relaxed text-secondary-700">
-            Choose the 30-Day System Reset when conversion issues are spread across teams, locations, and handoffs.
+            Choose the 30 Day Booking System Reset when conversion issues are spread across teams, locations, and handoffs.
           </p>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
           <article className="surface p-7 md:p-8">
-            <h3 className="mb-5 text-2xl font-bold text-secondary-900">What the 30-day scope covers</h3>
+            <h3 className="mb-5 text-2xl font-bold text-secondary-900">What the 30 Day Booking System Reset covers</h3>
             <ul className="space-y-4">
               {deepDiveFocus.map((item) => (
                 <li key={item} className="flex gap-3">

@@ -42,6 +42,10 @@ const PainPointsSection: React.FC = () => {
           </p>
         </div>
 
+        <p className="mx-auto mb-8 max-w-3xl text-center text-lg font-medium text-secondary-800">
+          Most clinics lose patients between enquiry and confirmed appointment.
+        </p>
+
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
           {issues.map((issue) => (
             <article key={issue.title} className="surface p-5">

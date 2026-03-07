@@ -199,7 +199,7 @@ const ApplicationFormSection: React.FC = () => {
               </p>
               <p className="chip w-full">
                 <FaCheckCircle className="h-4 w-4 text-accent-600" />
-                We recommend a direct 15-day or 30-day scope.
+                We recommend a 15 Day Booking Leak Fix or 30 Day Booking System Reset.
               </p>
               <p className="chip w-full">
                 <FaCheckCircle className="h-4 w-4 text-accent-600" />

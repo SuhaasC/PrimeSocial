@@ -1,42 +1,44 @@
 import type { Metadata, Viewport } from 'next';
-import Script from 'next/script';
 import './globals.css';
 import Header from '../src/components/Header';
 import Footer from '../src/components/Footer';
 import PageViewTracker from '../src/components/PageViewTracker';
 import EngagementTracker from '../src/components/EngagementTracker';
+import CookieConsentBanner from '../src/components/CookieConsentBanner';
 
-const gaMeasurementId = process.env.NEXT_PUBLIC_GA_ID;
+const gaMeasurementId = process.env.NEXT_PUBLIC_GA_ID || 'G-ZNG30K47F9';
 const hasValidGaId = typeof gaMeasurementId === 'string' && /^G-[A-Z0-9]+$/i.test(gaMeasurementId);
+// Replace with '/og-image.png' once you add a 1200x630 image to public/
 const sitePreviewImage = '/linkedin-profile.png';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://primesocial.agency'),
-  title: 'Prime Social | Booking & Follow-Up Optimisation for UK Clinics',
+  title: 'Prime Social | Booking Leak Fix & Follow-Up Optimisation for UK Clinics',
   description:
-    'Prime Social helps UK clinics turn more enquiries into confirmed patients through structured booking and follow-up optimisation.',
+    'Fix your clinic booking leak. Prime Social helps UK clinics turn more enquiries into confirmed patients through structured booking and follow-up optimisation.',
+  keywords: ['booking leak', 'clinic enquiries', 'get more enquiries', 'UK clinics', 'enquiry conversion', 'booking optimisation'],
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Booking & Follow-Up Optimisation for UK Clinics',
-    description: 'Turn more enquiries into confirmed patients in 15-30 days.',
+    title: 'Prime Social | Booking Leak Fix for UK Clinics',
+    description: 'Fix your clinic booking leak. Turn more enquiries into confirmed patients with our 15 Day or 30 Day engagement.',
     type: 'website',
     siteName: 'Prime Social',
     url: '/',
     images: [
       {
         url: sitePreviewImage,
-        width: 800,
-        height: 800,
-        alt: 'Prime Social',
+        width: 1200,
+        height: 630,
+        alt: 'Prime Social - Booking Leak Fix for UK Clinics',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Booking & Follow-Up Optimisation for UK Clinics',
-    description: 'Turn more enquiries into confirmed patients in 15-30 days.',
+    title: 'Prime Social | Booking Leak Fix for UK Clinics',
+    description: 'Fix your clinic booking leak. Turn more enquiries into confirmed patients.',
     images: [sitePreviewImage],
   },
   robots: {
@@ -63,20 +65,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans">
-        {hasValidGaId && (
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
-            strategy="afterInteractive"
-          />
-        )}
-        {hasValidGaId && (
-          <Script id="gtag-init" strategy="afterInteractive">
-            {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${gaMeasurementId}', { send_page_view: false });`}
-          </Script>
-        )}
         <PageViewTracker />
         <EngagementTracker />
         <div className="min-h-screen">
@@ -84,6 +72,7 @@ gtag('config', '${gaMeasurementId}', { send_page_view: false });`}
           {children}
           <Footer />
         </div>
+        {hasValidGaId && <CookieConsentBanner gaId={gaMeasurementId} />}
       </body>
     </html>
   );

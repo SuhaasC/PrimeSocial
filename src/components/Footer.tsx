@@ -1,8 +1,9 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaLinkedin } from 'react-icons/fa';
-import { IconBrandX } from '@tabler/icons-react';
+import { FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   return (
@@ -18,16 +19,16 @@ const Footer: React.FC = () => {
             <p className="mt-4 text-sm text-secondary-400">contact@primesocial.agency</p>
             <div className="mt-4 flex items-center gap-4">
               <a
-                href="https://x.com/primesocial"
+                href="https://www.instagram.com/primesocial.agency/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Prime Social on X"
+                aria-label="Prime Social on Instagram"
                 className="text-secondary-300 transition-colors hover:text-accent-300"
               >
-                <IconBrandX className="h-6 w-6" />
+                <FaInstagram className="h-6 w-6" />
               </a>
               <a
-                href="https://www.linkedin.com/company/prime-social-agency/"
+                href="https://www.linkedin.com/company/prime-social-agency"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Prime Social on LinkedIn"
@@ -53,12 +54,17 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link href="/#fifteen-day" className="transition-colors hover:text-accent-200">
-                  15-Day Service
+                  15 Day Booking Leak Fix
                 </Link>
               </li>
               <li>
                 <Link href="/#thirty-day" className="transition-colors hover:text-accent-200">
-                  30-Day Service
+                  30 Day Booking System Reset
+                </Link>
+              </li>
+              <li>
+                <Link href="/#outcomes" className="transition-colors hover:text-accent-200">
+                  Outcomes
                 </Link>
               </li>
               <li>
@@ -81,6 +87,15 @@ const Footer: React.FC = () => {
                 <Link href="/terms" className="transition-colors hover:text-accent-200">
                   Terms of Service
                 </Link>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => window.dispatchEvent(new CustomEvent('cookie-preferences-open'))}
+                  className="text-left transition-colors hover:text-accent-200"
+                >
+                  Cookie preferences
+                </button>
               </li>
             </ul>
           </div>

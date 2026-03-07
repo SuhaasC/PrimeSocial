@@ -12,17 +12,20 @@ const FifteenDaySection: React.FC = () => {
   return (
     <section id="fifteen-day" className="section-padding relative overflow-hidden">
       <div className="container-custom relative">
+        <p className="mx-auto mb-8 max-w-3xl text-center text-lg text-secondary-700">
+          Two fixed engagements depending on how complex the booking issue is.
+        </p>
         <div className="mx-auto mb-10 max-w-3xl text-center">
-          <span className="eyebrow mb-3">15-Day Service</span>
-          <h2 className="title-display mb-4 text-3xl font-bold md:text-5xl">When 15 Days Is the Better Fit</h2>
+          <span className="eyebrow mb-3">15 Day Booking Leak Fix</span>
+          <h2 className="title-display mb-4 text-3xl font-bold md:text-5xl">15 Day Booking Leak Fix</h2>
           <p className="text-lg leading-relaxed text-secondary-700">
-            Choose the 15-Day Fix Plan when one clear bottleneck is blocking confirmed appointments.
+            Choose the 15 Day Booking Leak Fix when one clear bottleneck is blocking confirmed appointments.
           </p>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
           <article className="surface p-7 md:p-8">
-            <h3 className="mb-5 text-2xl font-bold text-secondary-900">What the 15-day scope covers</h3>
+            <h3 className="mb-5 text-2xl font-bold text-secondary-900">What the 15 Day Booking Leak Fix covers</h3>
             <ul className="space-y-4">
               {sprintFocus.map((item) => (
                 <li key={item} className="flex gap-3">

@@ -19,8 +19,8 @@ const HeroSection: React.FC = () => {
           </h1>
           <p className="mx-auto mb-10 max-w-3xl text-lg leading-8 text-secondary-700 md:text-xl md:leading-9">
             You already generate demand. The real leak is operational, between first enquiry and confirmed booking.
-            We fix these gaps with a Review, Correct, Embed method delivered as either a focused 15-day plan or a
-            broader 30-day reset.
+            We fix these gaps with a Review, Correct, Embed method delivered as either a 15 Day Booking Leak Fix or a
+            30 Day Booking System Reset.
           </p>
 
           <div className="mb-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">

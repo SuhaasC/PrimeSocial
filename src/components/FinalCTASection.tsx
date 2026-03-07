@@ -9,8 +9,8 @@ const FinalCTASection: React.FC = () => {
           <span className="eyebrow mb-3">Next Step</span>
           <h2 className="title-display mb-4 text-3xl font-bold md:text-5xl">Ready to Stabilise Booking Conversion?</h2>
           <p className="mx-auto mb-8 max-w-3xl text-lg leading-relaxed text-secondary-700">
-            Start with a short application. If a clear opportunity exists, we scope the right 15-day or 30-day engagement
-            model immediately.
+            Start with a short application. If a clear opportunity exists, we scope the right 15 Day Booking Leak Fix or
+            30 Day Booking System Reset immediately.
           </p>
           <Link href="/apply" className="btn-primary">
             Start Application

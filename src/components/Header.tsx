@@ -9,8 +9,8 @@ import { trackButtonClick } from '../utils/analytics';
 const navLinks = [
   { href: '/#gap', label: 'The Gap' },
   { href: '/#process', label: 'Method' },
-  { href: '/#fifteen-day', label: '15-Day' },
-  { href: '/#thirty-day', label: '30-Day' },
+  { href: '/#fifteen-day', label: '15-Day Leak Fix' },
+  { href: '/#thirty-day', label: '30-Day System Reset' },
   { href: '/#outcomes', label: 'Outcomes' },
 ];
 

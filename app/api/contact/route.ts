@@ -172,9 +172,18 @@ ${payload.message}
     });
 
     return NextResponse.json({ success: true });
-  } catch {
+  } catch (error) {
+    console.error('[contact-api] Failed to send application email', error);
+    const debugMessage = error instanceof Error ? error.message : 'Unknown SMTP error.';
+
     return NextResponse.json(
-      { success: false, error: 'Unable to submit the form right now. Please try again later.' },
+      {
+        success: false,
+        error:
+          process.env.NODE_ENV === 'production'
+            ? 'Unable to submit the form right now. Please try again later.'
+            : `Email send failed: ${debugMessage}`,
+      },
       { status: 500 }
     );
   }

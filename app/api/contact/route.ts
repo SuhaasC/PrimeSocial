@@ -95,6 +95,30 @@ const requiredEnv = [
 ] as const;
 
 const missingEnvVars = requiredEnv.filter((key) => !process.env[key]);
+let cachedTransporter: nodemailer.Transporter | null = null;
+
+const getTransporter = () => {
+  if (cachedTransporter) return cachedTransporter;
+
+  const port = Number(process.env.SMTP_PORT || 587);
+  cachedTransporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port,
+    secure: port === 465,
+    pool: true,
+    maxConnections: 1,
+    maxMessages: 50,
+    connectionTimeout: 10_000,
+    greetingTimeout: 10_000,
+    socketTimeout: 20_000,
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+  });
+
+  return cachedTransporter;
+};
 
 export async function POST(request: NextRequest) {
   try {
@@ -123,15 +147,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT || 587),
-      secure: Number(process.env.SMTP_PORT || 587) === 465,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
+    const transporter = getTransporter();
 
     const fromEmail = process.env.CONTACT_FROM_EMAIL || process.env.SMTP_USER;
     const toEmail = PRIMARY_CONTACT_EMAIL;
